@@ -3,24 +3,64 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --neutaral-lightest : #F2F2F2;
+  --neutaral-lighter : #DADAD8;
+  --neutaral-light : #B6B5B2;
+  --neutaral-base : #86857F;
+  --neutaral-dark : #55544C;
+  --neutaral-darker : #252319;
+  --neutaral-darkest : #0D0B00;
 }
 
 @theme inline {
+  --color-neutaral-lightest : var(--neutaral-lightest);
+  --color-neutaral-lighter : var(--neutaral-lighter);
+  --color-neutaral-light : var(--neutaral-light);
+  --color-neutaral-base : var(--neutaral-base);
+  --color-neutaral-dark : var(--neutaral-dark);
+  --color-neutaral-darker : var(--neutaral-darker);
+  --color-neutaral-darkest : var(--neutaral-darkest);
+   
+  /* font */
+  --font-primary: var(--font-questrial);
+  --font-secondary: var(--font-lato);
+
+  --color-dodger-blue: var(--dodger-blue);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-  }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  
+} */
+
+@layer base {
+
+   h1 {
+    @apply text-2xl font-bold
+  }
+
+  h2 {
+    @apply text-xl font-bold
+  }
+
+  h3 {
+    @apply text-lg font-bold
+  }
+  h1{
+    font-family: var(--font-source-code-pro);
+  }
+
+  body{
+    font-family: var(--font-lato);
+  }
+
 }
