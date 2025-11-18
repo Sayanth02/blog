@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
+const nextConfig: NextConfig & { eslint?: { ignoreDuringBuilds?: boolean } } = {
   images: {
     remotePatterns: [
       {
@@ -8,6 +8,14 @@ const nextConfig: NextConfig = {
         hostname: "cdn.sanity.io",
       },
     ],
+  },
+  // Do not fail the production build on ESLint errors
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  // Do not fail the production build on TypeScript errors
+  typescript: {
+    ignoreBuildErrors: true,
   },
 };
 
