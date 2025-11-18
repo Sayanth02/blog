@@ -1,10 +1,8 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
+import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
-import { client } from "@/sanity/lib/client";
-import { featuredPostsQuery } from "@/sanity/lib/queries";
 import type { Post } from "@/sanity/lib/types";
 import FeaturedPostSlide from "./FeaturedPostSlide";
 import HeroCarouselSkeleton from "./HeroCarouselSkeleton";
@@ -15,40 +13,15 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "./hero-carousel.css";
 
-const HeroCarousel = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+interface HeroCarouselProps {
+  posts: Post[];
+}
+
+const HeroCarousel = ({ posts }: HeroCarouselProps) => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const swiperRef = useRef<SwiperType | null>(null);
 
-  useEffect(() => {
-    let mounted = true;
-    (async () => {
-      setLoading(true);
-      try {
-        const data = await client.fetch<Post[]>(featuredPostsQuery);
-        if (mounted) {
-          setPosts(data ?? []);
-          setLoading(false);
-        }
-      } catch (error) {
-        console.error("Failed to fetch featured posts:", error);
-        if (mounted) {
-          setPosts([]);
-          setLoading(false);
-        }
-      }
-    })();
-    return () => {
-      mounted = false;
-    };
-  }, []);
-
-  if (loading) {
-    return <HeroCarouselSkeleton />;
-  }
-
-  if (!loading && posts.length === 0) {
+  if (!posts || posts.length === 0) {
     return (
       <div className="w-full h-[600px] bg-neutral-100 flex items-center justify-center">
         <p className="text-neutral-500 text-lg">No featured posts available</p>

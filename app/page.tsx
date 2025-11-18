@@ -6,16 +6,24 @@ import Categories from "@/components/category/Categories";
 import Footer from "@/components/common/Footer";
 import Featured from "@/components/featured/Featured";
 import NewsLetter from "@/components/sub/NewsLetter";
+import { client } from "@/sanity/lib/client";
+import { featuredPostsQuery } from "@/sanity/lib/queries";
+import type { Post } from "@/sanity/lib/types";
+import Hero from "@/components/hero/Hero";
 
-export default function Home() {
+
+
+export default async function Home() {
+
+
   return (
     <div>
-      <HeroCarousel/>
+      <Hero/>
       <About/>
       <RecentPosts/>
       <ContactForWork/>
       {/* <Categories/> */}
-      <Featured/>
+      <Featured />
       <NewsLetter/>
       <Footer/>
     </div>
