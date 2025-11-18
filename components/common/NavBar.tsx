@@ -53,7 +53,7 @@ const [isOpen, setIsOpen] = useState(false);
           <h1>The localhost</h1>
         </Link>
 
-        <Button  label="Subscribe" />
+        <Button  label="Contact Me" link="/contact" />
       </nav>
 
       {/* Horizontal line - not full width */}

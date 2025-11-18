@@ -5,6 +5,7 @@ import ContactForWork from "@/components/cta/ContactForWork";
 import Categories from "@/components/category/Categories";
 import Footer from "@/components/common/Footer";
 import Featured from "@/components/featured/Featured";
+import NewsLetter from "@/components/sub/NewsLetter";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <ContactForWork/>
       {/* <Categories/> */}
       <Featured/>
+      <NewsLetter/>
       <Footer/>
     </div>
   );
