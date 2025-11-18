@@ -33,7 +33,7 @@ export default function BlogCard({
   // 🟦 Vertical Layout
   if (variant === "vertical") {
     return (
-      <article className="bg-white rounded-3xl border border-neutral-200 hover:shadow-lg transition-all duration-300 overflow-hidden max-w-sm mx-auto">
+      <article className="bg-white rounded-3xl border border-neutral-200 hover:shadow-lg transition-all duration-300 overflow-hidden ">
         <Link href={`/posts/${post.slug}`}>
           {/* Content */}
           <div className="p-6 flex flex-col gap-4">
@@ -124,7 +124,7 @@ export default function BlogCard({
           </div>
 
           {/* Meta Info */}
-          <div className="flex items-center gap-4 text-sm text-neutral-500">
+          <div className="flex items-center gap-4 text-xs md:text-sm text-neutral-500">
             <div className="flex items-center gap-2">
               {/* {post.author?.image ? (
                 <Image

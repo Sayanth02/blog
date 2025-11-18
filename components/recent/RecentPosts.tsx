@@ -13,7 +13,7 @@ const RecentPosts = async () => {
     <div className="w-full px-4 md:px-8 lg:px-16 pt-8">
       <SectionHeader />
       <div className="container mt-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
               {recentPosts.map((post) => (
                   <BlogCard variant='vertical'  key={post._id} post={post} />
               ))}

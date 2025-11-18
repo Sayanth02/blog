@@ -32,7 +32,7 @@ const Footer = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 py-24">
         <div className="flex flex-col space-y-6">
           <h1 className="text-4xl">The localhost</h1>
-          <p className="text-neutaral-base leading-8 text-lg  w-3/4">
+          <p className="text-neutaral-base leading-8 text-lg  md:w-3/4">
             I write about tech, development, and the things I’m building. The
             Local Host is my space to document what I learn. Simple ideas,
             practical insights.
@@ -91,8 +91,7 @@ const Footer = () => {
       <hr className="text-neutaral-lighter" />
       <div className="flex flex-col md:flex-row justify-between items-center gap-4 py-8 md:py-12 px-6 md:px-8">
         <p className="text-gray-400 text-xs md:text-sm text-center md:text-left">
-          © 2024 Copyright - Ceilor | Designed by "UIXFlow" | License | Powered
-          by Webflow
+          © 2024 Copyright - sayanthpkumar | Designed by "sayanthpkumar" 
         </p>
 
         <button

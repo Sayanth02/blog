@@ -53,7 +53,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
   };
 
   return (
-    <div className="container mx-auto p-16">
+    <div className="container mx-auto lg:p-16">
       <div className="hidden w-full lg:flex flex-col items-center mb-16 text-center space-y-6">
         <h2 className="text-7xl font-light">All Articles</h2>
         <Disc2 />
@@ -64,7 +64,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
       </div>
 
       {/* Category Filter Buttons */}
-      <div className="flex flex-wrap gap-3 mb-12 justify-center">
+      <div className="flex flex-wrap gap-3 my-12 justify-center">
         <Link
           href="/posts"
           className={`px-4 py-2 rounded-lg font-medium transition-colors ${
@@ -92,7 +92,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
       {/* Posts Grid */}
       {result.posts.length > 0 ? (
-        <div className="grid grid-cols-1  xl:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
           {result.posts.map((post) => (
             <BlogCard key={post._id} post={post} />
           ))}

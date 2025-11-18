@@ -9,7 +9,7 @@ interface ButtonProps {
 
 const Button = ({label,link,className}: ButtonProps) => {
   return (
-    <Link href={`${link}`} className={`px-8 py-4 bg-black text-white font-semibold rounded-4xl ${className}`}>
+    <Link href={`${link}`} className={`px-8 py-3 bg-black text-white font-semibold rounded-4xl ${className}`}>
         {label}
     </Link>
   )

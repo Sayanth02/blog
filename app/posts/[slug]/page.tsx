@@ -79,8 +79,8 @@ export default async function BlogPost({
       <header className="mb-8">
         <h1 className="text-5xl font-bold mb-4">{post.title}</h1>
 
-        <div className="flex items-center gap-4 text-gray-600 mb-6">
-          <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 md:gap-4 text-sm md:text-base text-gray-600 mb-6">
+          <div className="flex items-center gap-2 ">
             {post.author.image && (
               <Image
                 src={
@@ -164,7 +164,11 @@ export default async function BlogPost({
           <h3 className="text-2xl font-bold mb-6">Related Posts</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {relatedPosts.map((relatedPost: any) => (
-              <BlogCard key={relatedPost._id} post={relatedPost} variant="vertical" />
+              <BlogCard
+                key={relatedPost._id}
+                post={relatedPost}
+                variant="vertical"
+              />
             ))}
           </div>
         </div>

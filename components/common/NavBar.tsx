@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { useEffect, useState, useRef } from "react";
 import Button from "./Button";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
 const [isOpen, setIsOpen] = useState(false);
@@ -37,11 +38,9 @@ const [isOpen, setIsOpen] = useState(false);
           type="button"
         >
           {isOpen ? (
-            // <IoClose className="text-neutral-800 text-2xl" />
-            <span>close</span>
+            <X className="text-black" />
           ) : (
-            // <GiHamburgerMenu className="text-neutral-800 text-2xl" />
-            <span>Menu</span>
+            <Menu className="text-black" />
           )}
         </button>
 
@@ -53,7 +52,9 @@ const [isOpen, setIsOpen] = useState(false);
           <h1>The localhost</h1>
         </Link>
 
-        <Button  label="Contact Me" link="/contact" />
+        <div className="hidden md:block">
+          <Button label="Contact Me" link="/contact" />
+        </div>
       </nav>
 
       {/* Horizontal line - not full width */}
@@ -64,11 +65,11 @@ const [isOpen, setIsOpen] = useState(false);
         <>
           {/* Overlay */}
           <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
+            className="fixed inset-0 bg-black/50 bg-opacity-50 z-30 md:hidden"
             onClick={() => setIsOpen(false)}
           />
           {/* Menu */}
-          <div className="fixed top-16 left-0 w-full bg-white shadow-md py-6 z-40 md:hidden animate-slideDown">
+          <div className="fixed top-16 left-0  w-full bg-white shadow-md py-6 z-40 md:hidden animate-slideDown">
             <ul className="flex flex-col space-y-4 items-center">
               {navLinks.map((link) => (
                 <li key={link.name}>
